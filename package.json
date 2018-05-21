@@ -1,0 +1,26 @@
+{
+  "name": "restfulapi",
+  "version": "1.0.0",
+  "description": "a basic node restful api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "rest"
+  ],
+  "author": "alex wilkinson",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.3",
+    "multer": "^1.3.0",
+    "request": "^2.83.0"
+  }
+}

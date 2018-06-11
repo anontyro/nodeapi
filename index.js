@@ -15,7 +15,9 @@ const app = express();
 require('dotenv').config()
 
 // DATABASE ---------------------------------------
-mongoose.connect(process.env.MONGOOSE_CONN);
+mongoose.connect(process.env.MONGOOSE_CONN, (err) => {
+    console.error(err);
+});
 
 // MIDDLEWARE ------------------------------------
 app.use(bodyParser.urlencoded({extended: true}));

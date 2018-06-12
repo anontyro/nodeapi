@@ -21,4 +21,16 @@ router.get('/:title', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    console.log(req.body);
+
+    mongooseFilmApi.postNewFilm(req.body, (response) =>{
+
+        console.log(response);
+
+        res.send('success');
+    }, err => console.log('error catch'))
+    
+});
+
 module.exports = router;

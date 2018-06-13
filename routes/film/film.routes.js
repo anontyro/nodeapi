@@ -59,4 +59,16 @@ router.delete('/', (req, res) => {
     });
 })
 
+router.patch('/:id', (req, res) => {
+    const id = req.params.id;
+    Film.update({_id: ObjectId(id)},{$set: req.body}, (err, response) => {
+        if (err) {
+            console.error(err);
+            res.send('an error occured whilst trying to update');
+        } else {
+            res.send('Success in updating!');
+        }
+    });
+});
+
 module.exports = router;

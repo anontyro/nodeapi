@@ -26,9 +26,14 @@ router.post('/', (req, res) => {
 
     mongooseFilmApi.postNewFilm(req.body, (response) =>{
 
-        console.log(response);
-
-        res.send('success');
+        response.save((err, Film) => {
+            if (err) {
+                res.send('An error ocurred whilst trying to save the film')
+            } else {
+                console.log(Film);
+                res.send('success! ' + Film.title + ' has been saved correctly');
+            }
+        })
     }, err => console.log('error catch'))
     
 });

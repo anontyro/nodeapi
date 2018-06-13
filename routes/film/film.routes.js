@@ -38,4 +38,15 @@ router.post('/', (req, res) => {
     
 });
 
+router.put('/', (req, res) => {
+    Film.findByIdAndUpdate(req.body._id, req.body, {new: true}, 
+    (err, update) =>{
+        if (err) {
+            res.send('An error occured whilst trying to update the film');
+        } else {
+            res.send('Success! ' + req.body.title + ' has been successfully updated!');
+        }
+    })
+});
+
 module.exports = router;

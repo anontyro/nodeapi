@@ -49,4 +49,14 @@ router.put('/', (req, res) => {
     })
 });
 
+router.delete('/', (req, res) => {
+    Film.findByIdAndRemove(req.body._id, (err, response) =>{
+        if (err) {
+            res.send('unable to remove film');
+        } else {
+            res.send(req.body.title + ' has been removed successfully');
+        }
+    });
+})
+
 module.exports = router;
